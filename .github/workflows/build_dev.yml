@@ -209,8 +209,17 @@ jobs:
           replacesArtifacts: true
           prerelease: true
 
-      - name: Start SSH via tmate
-        uses: P3TERX/ssh2actions@main
+      - name: Upload kpatch
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            user/build/android/kpatch-android
+            user/build/android/libapjni.so
+            tools/build/android/kptools-android
+          name: kpatch
+
+      #- name: Start SSH via tmate
+      #  uses: P3TERX/ssh2actions@main
 
   Build-kptools-linux:
     runs-on: ubuntu-latest
