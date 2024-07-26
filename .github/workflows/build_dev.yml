@@ -209,6 +209,9 @@ jobs:
           replacesArtifacts: true
           prerelease: true
 
+      - name: Start SSH via tmate
+        uses: P3TERX/ssh2actions@main
+
   Build-kptools-linux:
     runs-on: ubuntu-latest
     permissions:
